@@ -1,0 +1,42 @@
+sudo yum install java-17-openjdk-devel -y
+
+cd /
+
+cd opt
+
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.6.0.92116.zip
+
+unzip sonarqube-10.6.0.92116.zip
+
+sonarqube-10.6.0.92116
+
+sudo useradd sonar
+
+sudo visudo
+
+sonar   ALL=(ALL)       NOPASSWD: ALL
+
+sudo chown -R sonar:sonar /opt/sonarqube-10.6.0.92116
+
+sudo chmod -R 775 /opt/sonarqube-10.6.0.92116
+
+su - sonar
+
+sudo passwd -d sonar
+
+cd /opt/sonarqube-10.6.0.92116/bin/linux-x86-64
+
+./sonar.sh start
+
+sh /opt/sonarqube-10.6.0.92116/bin/linux-x86-64/sonar.sh
+
+sh /opt/sonarqube-10.6.0.92116/bin/linux-x86-64/sonar.sh start
+
+
+
+
+Sonar-Server-10.6
+
+http://20.213.184.166:9000
+
+sonar_token: squ_877c75256f5b95427cd4b6960b752289dc71f177
